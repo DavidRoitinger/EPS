@@ -6,27 +6,24 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
         this.max = max;
     }
 
-    public boolean isPrim(int p){
+    public boolean isPrim(int value){
 
-        boolean primNumber =true;
-
-        while(p>0){
-
-            if(p%2==0){
-                primNumber=false;
-
+        if (value <= 2) {
+            return (value == 2);
+        }
+        for (long i = 2; i * i <= value; i++) {
+            if (value % i == 0) {
+                return false;
             }
-            else if(p%3==0){
-                primNumber=false;
-
-            }
-
-        }return primNumber;
+        }
+        return true;
 
     }
     public void printPrimes(){
         for (int i = 1; i < max; i++) {
-            if (isPrim(i)) System.out.println(i);
+            if (isPrim(i)) {
+                System.out.println(i);
+            }
         }
     }
 }
