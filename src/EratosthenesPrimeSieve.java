@@ -25,8 +25,8 @@ public class EratosthenesPrimeSieve implements PrimeSieve {
 
     }
     public void printPrimes(){
-        for (int i = 0; i < max; i++) {
-
+        for (int i = 1; i < max; i++) {
+            if (isPrim(i)) System.out.println(i);
         }
     }
 }
